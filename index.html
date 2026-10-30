@@ -4,200 +4,334 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CoreEra | Enterprise software from Saudi Arabia</title>
-<meta name="description" content="CoreEra builds enterprise software for growing businesses: Mobile Device Management (MDM), ERP, and Sales & Marketing solutions. Based in Jeddah, Saudi Arabia.">
+<meta name="description" content="CoreEra builds enterprise software for growing businesses: device management, ERP, and sales & marketing. Based in Jeddah, Saudi Arabia.">
 <meta property="og:title" content="CoreEra">
 <meta property="og:description" content="The core of the digital era. Enterprise software from Saudi Arabia.">
+<meta name="theme-color" content="#0B1F3A">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B1F3A'/%3E%3Cpath d='M46 18 A20 20 0 1 0 46 46' fill='none' stroke='white' stroke-width='7' stroke-linecap='round'/%3E%3Crect x='26' y='28' width='14' height='8' rx='4' fill='%231D6FE0'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#0B1F3A;--blue:#1D6FE0;--mist:#F5F7FA;--slate:#5B6474;--line:#E3E7EE;--soft:#A9B4C6}
+:root{--navy:#0B1F3A;--navy2:#0E2648;--deep:#071429;--blue:#1D6FE0;--blue2:#4C8FF0;--mist:#F5F7FA;--slate:#5B6474;--line:#E3E7EE;--soft:#A9B4C6;--ok:#22B07D;--warn:#E8A23A}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:#fff;color:var(--navy);font:400 17px/1.6 Inter,system-ui,sans-serif}
+body{margin:0;background:#fff;color:var(--navy);font:400 17px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 html[lang=ar] body{font-family:'IBM Plex Sans Arabic',system-ui,sans-serif}
 html[lang=en] .ar,html[lang=ar] .en{display:none}
 a{color:var(--blue)}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-.display{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.display{font-family:'Space Grotesk',sans-serif;letter-spacing:-.025em}
 html[lang=ar] .display{font-family:'IBM Plex Sans Arabic',sans-serif;letter-spacing:0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin:0 0 16px}
+html[lang=ar] .eyebrow{letter-spacing:0}
+.eyebrow:before{content:"";width:18px;height:2px;background:currentColor;border-radius:2px}
 
 /* header */
-header{position:sticky;top:0;z-index:10;background:rgba(11,31,58,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+header{position:fixed;inset:0 0 auto;z-index:20;transition:background .3s,box-shadow .3s}
+header.scrolled{background:rgba(11,31,58,.92);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(255,255,255,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
 .brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font:700 21px 'Space Grotesk',sans-serif}
-.brand svg{flex:none}
-.links{display:flex;align-items:center;gap:28px}
-.links a{color:var(--soft);text-decoration:none;font-size:15px}
+.links{display:flex;align-items:center;gap:30px}
+.links a{color:var(--soft);text-decoration:none;font-size:15px;transition:color .2s}
 .links a:hover{color:#fff}
-.lang{background:transparent;border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:8px;padding:8px 14px;font:600 14px 'IBM Plex Sans Arabic',Inter,sans-serif;cursor:pointer;min-height:40px}
-.lang:hover{border-color:#fff}
+.lang{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:999px;padding:8px 16px;font:600 14px 'IBM Plex Sans Arabic',Inter,sans-serif;cursor:pointer;min-height:40px}
+.lang:hover{background:rgba(255,255,255,.12)}
+.navcta{background:#fff;color:var(--navy)!important;padding:9px 18px;border-radius:999px;font-weight:600}
 
 /* hero */
-.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
-.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:64px 64px}
-.hero .wrap{position:relative;padding-top:110px;padding-bottom:120px}
-.eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin:0 0 20px}
-html[lang=ar] .eyebrow{letter-spacing:0}
-.wordmark{display:flex;align-items:center;gap:.06em;font:700 clamp(56px,11vw,128px)/1 'Space Grotesk',sans-serif;letter-spacing:.02em;margin:0;direction:ltr;justify-content:flex-start}
-html[lang=ar] .wordmark{justify-content:flex-end}
-.wordmark svg{height:.7em;width:auto}
-.tag{font:300 clamp(20px,2.6vw,28px)/1.4 'Space Grotesk',sans-serif;color:var(--soft);margin:22px 0 0;max-width:640px}
-html[lang=ar] .tag{font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:400}
-.cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:44px}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;border-radius:10px;font-weight:600;font-size:16px;text-decoration:none}
-.btn.primary{background:var(--blue);color:#fff}
-.btn.primary:hover{background:#185fc2}
-.btn.ghost{border:1px solid rgba(255,255,255,.35);color:#fff}
-.btn.ghost:hover{border-color:#fff}
-.bar{height:6px;background:var(--blue)}
+.hero{background:radial-gradient(1200px 600px at 75% 10%,#16386A 0%,transparent 60%),var(--navy);color:#fff;position:relative;overflow:hidden;padding:150px 0 0}
+.hero .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 50% 30%,#000 30%,transparent 75%)}
+.hero-inner{position:relative;text-align:center;max-width:860px;margin:0 auto}
+.pill{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.05);border-radius:999px;padding:6px 14px 6px 8px;font-size:14px;color:#D6DEEA}
+html[lang=ar] .pill{padding:6px 8px 6px 14px}
+.pill b{background:var(--blue);color:#fff;border-radius:999px;padding:2px 10px;font-size:12px;font-weight:600}
+.hero h1{font-size:clamp(42px,6.6vw,78px);line-height:1.04;margin:26px 0 0;font-weight:700}
+.hero h1 .accent{background:linear-gradient(90deg,#fff 0%,#9CC2FF 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.sub{font-size:clamp(18px,2.1vw,21px);color:var(--soft);max-width:640px;margin:22px auto 0}
+.cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:36px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 26px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;transition:transform .2s,background .2s,box-shadow .2s}
+.btn.primary{background:var(--blue);color:#fff;box-shadow:0 8px 30px rgba(29,111,224,.35)}
+.btn.primary:hover{background:#1863cc;transform:translateY(-1px)}
+.btn.ghost{border:1px solid rgba(255,255,255,.25);color:#fff}
+.btn.ghost:hover{background:rgba(255,255,255,.08)}
+.btn svg{width:18px;height:18px}
+html[lang=ar] .btn svg{transform:scaleX(-1)}
+
+/* mockup */
+.mock-wrap{position:relative;margin:70px auto 0;max-width:1060px;perspective:1600px}
+.mock-glow{position:absolute;inset:10% 10% -10%;background:radial-gradient(closest-side,rgba(29,111,224,.55),transparent);filter:blur(40px)}
+.mock{position:relative;background:#0F2A50;border:1px solid rgba(255,255,255,.12);border-bottom:0;border-radius:16px 16px 0 0;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,.45);transform:rotateX(8deg);transform-origin:bottom;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.mock.flat{transform:rotateX(0)}
+.chrome{display:flex;align-items:center;gap:8px;height:40px;padding:0 16px;background:#0B2242;border-bottom:1px solid rgba(255,255,255,.08)}
+.chrome i{width:11px;height:11px;border-radius:50%;background:#2A4369}
+.chrome .url{margin-inline-start:18px;flex:1;max-width:360px;height:24px;border-radius:6px;background:#132F57;color:#7F93B2;font:500 12px/24px Inter,sans-serif;padding:0 12px;direction:ltr;text-align:left}
+.app{display:grid;grid-template-columns:200px 1fr;min-height:440px;direction:ltr;text-align:left;font-family:Inter,sans-serif}
+.side{background:#0C2445;border-right:1px solid rgba(255,255,255,.06);padding:18px 14px}
+.side .logo{display:flex;align-items:center;gap:8px;color:#fff;font:700 15px 'Space Grotesk',sans-serif;margin-bottom:22px}
+.side .logo span{font-weight:300;color:var(--blue2)}
+.side a{display:flex;align-items:center;gap:10px;color:#8EA2C0;font-size:13px;padding:8px 10px;border-radius:8px;text-decoration:none}
+.side a.on{background:rgba(29,111,224,.18);color:#fff}
+.side a svg{width:16px;height:16px;flex:none}
+.main{padding:22px 24px;color:#DCE5F2}
+.main h4{margin:0;font:600 18px 'Space Grotesk',sans-serif;color:#fff}
+.main .hint{font-size:12px;color:#7F93B2;margin:2px 0 18px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.kpi{background:#12305A;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:14px}
+.kpi small{display:block;font-size:11px;color:#8EA2C0}
+.kpi strong{display:block;font:700 22px 'Space Grotesk',sans-serif;color:#fff;margin-top:4px}
+.kpi em{font-style:normal;font-size:11px;color:var(--ok)}
+.panels{display:grid;grid-template-columns:1.4fr 1fr;gap:12px;margin-top:12px}
+.panel{background:#12305A;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:14px}
+.panel h5{margin:0 0 10px;font-size:12px;font-weight:600;color:#C3D0E3}
+.rows div{display:grid;grid-template-columns:1.3fr 1fr auto;gap:10px;align-items:center;font-size:12px;padding:8px 0;border-top:1px solid rgba(255,255,255,.06)}
+.rows div:first-child{border-top:0}
+.rows span:nth-child(2){color:#8EA2C0}
+.dot{display:inline-flex;align-items:center;gap:6px;font-size:11px;padding:2px 8px;border-radius:999px;background:rgba(34,176,125,.15);color:#5FD6A8}
+.dot.w{background:rgba(232,162,58,.15);color:#F2C27A}
+.bars{display:flex;align-items:flex-end;gap:7px;height:120px;padding-top:6px}
+.bars i{flex:1;border-radius:4px 4px 0 0;background:linear-gradient(#4C8FF0,#1D6FE0);transform-origin:bottom;animation:grow 1.2s cubic-bezier(.2,.7,.2,1) both}
+.bars i:nth-child(odd){opacity:.75}
+@keyframes grow{from{transform:scaleY(.05)}}
+.preview-tag{position:absolute;top:52px;right:16px;font:600 10px Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#7F93B2;border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:3px 9px}
 
 /* sections */
-section{padding:96px 0}
-h2{font-size:clamp(30px,4vw,42px);line-height:1.15;margin:0 0 14px}
-.lead{color:var(--slate);max-width:640px;margin:0 0 48px;font-size:18px}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.card{border:1px solid var(--line);border-radius:16px;padding:30px;background:#fff}
-.card .icon{width:48px;height:48px;border-radius:12px;background:var(--mist);display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:var(--blue)}
-.card h3{margin:0!important;font:700 21px 'Space Grotesk',sans-serif;margin:0 0 8px}
-html[lang=ar] .card h3{font-family:'IBM Plex Sans Arabic',sans-serif}
-.card h3 span{font-weight:300;color:var(--blue)}
-.card p{margin:0;color:var(--slate);font-size:16px}
+section{padding:110px 0}
+h2{font-size:clamp(32px,4.2vw,48px);line-height:1.1;margin:0 0 16px}
+.lead{color:var(--slate);max-width:620px;margin:0 0 56px;font-size:18px}
+.center{text-align:center}
+.center .lead{margin-left:auto;margin-right:auto}
 
+.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.prod{position:relative;border:1px solid var(--line);border-radius:20px;padding:30px;background:#fff;overflow:hidden;transition:transform .3s,box-shadow .3s,border-color .3s}
+.prod:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(11,31,58,.08);border-color:#CBD6E6}
+.prod:after{content:"";position:absolute;inset:auto -40px -60px auto;width:160px;height:160px;border-radius:50%;background:radial-gradient(closest-side,rgba(29,111,224,.10),transparent);transition:transform .4s}
+html[lang=ar] .prod:after{inset:auto auto -60px -40px}
+.prod:hover:after{transform:scale(1.4)}
+.prod .icon{width:52px;height:52px;border-radius:14px;background:var(--mist);display:flex;align-items:center;justify-content:center;color:var(--blue);margin-bottom:46px;transition:background .3s,color .3s}
+.prod:hover .icon{background:var(--blue);color:#fff}
+.prod h3{font:700 22px 'Space Grotesk',sans-serif;margin:0}
+.prod h3 span{font-weight:300;color:var(--blue)}
+.prod .soon{position:absolute;top:30px;inset-inline-end:30px;font-size:12px;font-weight:600;color:var(--slate);background:var(--mist);border-radius:999px;padding:4px 10px}
+.prod.feat{background:var(--navy);border-color:var(--navy);color:#fff}
+.prod.feat .icon{background:rgba(255,255,255,.08);color:#fff}
+.prod.feat h3 span{color:var(--blue2)}
+.prod.feat .soon{background:rgba(255,255,255,.1);color:#C3D0E3}
+
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;counter-reset:s}
+.step{position:relative;padding:32px;border-radius:20px;background:#fff;border:1px solid var(--line)}
+.step .n{font:700 14px 'Space Grotesk',sans-serif;color:var(--blue);letter-spacing:.08em}
+.step h3{font-size:20px;margin:14px 0 8px}
+.step p{margin:0;color:var(--slate);font-size:16px}
 .mist{background:var(--mist)}
-.why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
-.why h3{font-size:19px;margin:0 0 8px}
-.why p{margin:0;color:var(--slate);font-size:16px}
-.num{display:block;font:700 15px 'Space Grotesk',sans-serif;color:var(--blue);margin-bottom:14px;letter-spacing:.08em}
 
-/* contact */
-.contact{background:var(--navy);color:#fff;text-align:center}
-.contact h2{color:#fff}
-.contact .lead{color:var(--soft);margin-left:auto;margin-right:auto}
-.contact .cta{justify-content:center;margin-top:0}
-.mail{display:block;margin-top:22px;color:var(--soft);font-size:16px}
+.inds{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.ind{display:flex;align-items:center;gap:14px;padding:20px;border-radius:16px;border:1px solid var(--line);background:#fff;font-weight:600}
+.ind .ic{width:42px;height:42px;border-radius:12px;background:var(--mist);display:flex;align-items:center;justify-content:center;color:var(--blue);flex:none}
+
+.why{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.why ul{list-style:none;margin:0;padding:0;display:grid;gap:22px}
+.why li{display:grid;grid-template-columns:44px 1fr;gap:16px}
+.why li .ic{width:44px;height:44px;border-radius:12px;background:rgba(29,111,224,.1);color:var(--blue);display:flex;align-items:center;justify-content:center}
+.why h3{margin:0 0 4px;font-size:18px}
+.why p{margin:0;color:var(--slate);font-size:16px}
+.ksa{position:relative;border-radius:24px;background:var(--navy);padding:40px;color:#fff;overflow:hidden;min-height:340px}
+.ksa .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:32px 32px}
+.ksa .ring{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--blue2);box-shadow:0 0 0 0 rgba(76,143,240,.6);animation:pulse 2.4s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 18px rgba(76,143,240,0)}100%{box-shadow:0 0 0 0 rgba(76,143,240,0)}}
+.ksa .lbl{position:absolute;direction:ltr;font:500 12px Inter,sans-serif;color:#C3D0E3}
+.ksa h3{position:relative;font:700 26px 'Space Grotesk',sans-serif;margin:0;max-width:280px}
+html[lang=ar] .ksa h3{font-family:'IBM Plex Sans Arabic',sans-serif}
+.ksa p{position:relative;color:var(--soft);margin:8px 0 0;max-width:280px;font-size:15px}
+
+.final{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.final .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 50% 50%,#000 20%,transparent 70%)}
+.final .wrap{position:relative}
+.final h2{color:#fff}
+.final .lead{color:var(--soft)}
+.mail{display:block;margin-top:22px;color:var(--soft);font-size:15px}
 .mail a{color:#fff}
 
-footer{background:#081629;color:var(--soft);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:28px;padding-bottom:28px;flex-wrap:wrap}
-footer a{color:var(--soft)}
+footer{background:var(--deep);color:var(--soft);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:30px;padding-bottom:30px;flex-wrap:wrap}
+footer a{color:var(--soft);text-decoration:none}
+footer a:hover{color:#fff}
+.socials{display:flex;gap:18px}
 
-@media (max-width:860px){
-  .grid,.why{grid-template-columns:1fr}
-  .links a{display:none}
-  section{padding:72px 0}
-  .hero .wrap{padding-top:80px;padding-bottom:88px}
+/* reveal */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}.mock{transform:none}}
+
+@media (max-width:980px){
+  .products,.steps{grid-template-columns:1fr 1fr}
+  .inds{grid-template-columns:1fr 1fr}
+  .why{grid-template-columns:1fr}
+  .app{grid-template-columns:1fr}.side{display:none}
+  .kpis{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .links a:not(.navcta){display:none}
+  .products,.steps,.inds{grid-template-columns:1fr}
+  .panels{grid-template-columns:1fr}
+  section{padding:80px 0}
+  .hero{padding-top:120px}
 }
 </style>
 </head>
 <body>
 
-<header>
+<header id="hdr">
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="CoreEra home">
-      <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#1D6FE0" opacity=".0"/><path d="M52 14 A26 26 0 1 0 52 50" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/><rect x="24" y="19" width="22" height="6" rx="3" fill="#fff"/><rect x="24" y="29" width="16" height="6" rx="3" fill="#1D6FE0"/><rect x="24" y="39" width="22" height="6" rx="3" fill="#fff"/></svg>
+      <svg width="32" height="32" viewBox="0 0 64 64" aria-hidden="true"><path d="M52 14 A26 26 0 1 0 52 50" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/><rect x="24" y="19" width="22" height="6" rx="3" fill="#fff"/><rect x="24" y="29" width="16" height="6" rx="3" fill="#1D6FE0"/><rect x="24" y="39" width="22" height="6" rx="3" fill="#fff"/></svg>
       CoreEra
     </a>
     <nav class="links" aria-label="Main">
       <a href="#products"><span class="en">Products</span><span class="ar">المنتجات</span></a>
+      <a href="#how"><span class="en">How it works</span><span class="ar">كيف نعمل</span></a>
       <a href="#why"><span class="en">Why CoreEra</span><span class="ar">لماذا كور إيرا</span></a>
-      <a href="#contact"><span class="en">Contact</span><span class="ar">تواصل معنا</span></a>
       <button class="lang" id="lang" type="button" aria-label="Switch language"><span class="en">العربية</span><span class="ar">English</span></button>
+      <a class="navcta" href="#contact"><span class="en">Early access</span><span class="ar">التجربة المبكرة</span></a>
     </nav>
   </div>
 </header>
 
 <main id="top">
   <div class="hero">
+    <div class="grid-bg"></div>
     <div class="wrap">
-      <p class="eyebrow"><span class="en">Enterprise software · Jeddah, Saudi Arabia</span><span class="ar">برمجيات للمؤسسات · جدة، المملكة العربية السعودية</span></p>
-      <h1 class="wordmark" aria-label="CoreEra">
-        <span>COR</span>
-        <svg viewBox="0 0 74 70" aria-hidden="true"><rect x="32" y="0" width="12" height="70" fill="#fff"/><rect x="0" y="0" width="74" height="12" fill="#fff"/><rect x="4" y="29" width="66" height="12" fill="#1D6FE0"/><rect x="0" y="58" width="74" height="12" fill="#fff"/></svg>
-        <span>RA</span>
-      </h1>
-      <p class="tag"><span class="en">The core of the digital era. Software for growing businesses: device management, ERP, and sales &amp; marketing, built for the Saudi and Gulf markets.</span><span class="ar">جوهر العصر الرقمي. برمجيات للشركات النامية: إدارة الأجهزة، وتخطيط موارد المؤسسات، والمبيعات والتسويق، مصممة لسوق المملكة والخليج.</span></p>
-      <div class="cta">
-        <a class="btn primary" href="#contact"><span class="en">Get in touch</span><span class="ar">تواصل معنا</span></a>
-        <a class="btn ghost" href="#products"><span class="en">Explore products</span><span class="ar">استعرض المنتجات</span></a>
+      <div class="hero-inner">
+        <span class="pill rv"><b><span class="en">New</span><span class="ar">جديد</span></b><span class="en">Built in Jeddah for Saudi &amp; Gulf businesses</span><span class="ar">من جدة للشركات في المملكة والخليج</span></span>
+        <h1 class="display rv"><span class="en">Run your devices, operations and sales <span class="accent">from one core.</span></span><span class="ar">أدِر أجهزتك وعملياتك ومبيعاتك <span class="accent">من منصة واحدة.</span></span></h1>
+        <p class="sub rv"><span class="en">CoreEra is enterprise software for growing businesses: device management, ERP, and sales &amp; marketing, built for the region.</span><span class="ar">كور إيرا برمجيات للشركات النامية: إدارة الأجهزة، وتخطيط موارد المؤسسات، والمبيعات والتسويق، مصممة للمنطقة.</span></p>
+        <div class="cta rv">
+          <a class="btn primary" href="#contact"><span class="en">Get early access</span><span class="ar">احصل على التجربة المبكرة</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn ghost" href="#products"><span class="en">Explore products</span><span class="ar">استعرض المنتجات</span></a>
+        </div>
+      </div>
+
+      <div class="mock-wrap rv">
+        <div class="mock-glow"></div>
+        <div class="mock" id="mock" role="img" aria-label="Preview of the CoreEra Control dashboard">
+          <div class="chrome"><i></i><i></i><i></i><div class="url">app.coreeratech.com/control</div></div>
+          <span class="preview-tag">Preview</span>
+          <div class="app">
+            <aside class="side">
+              <div class="logo">CoreEra <span>Control</span></div>
+              <a class="on" href="#top" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Overview</a>
+              <a href="#top" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2"/></svg>Devices</a>
+              <a href="#top" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14"/></svg>Branches</a>
+              <a href="#top" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg>Policies</a>
+              <a href="#top" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v12H5l-1 4z"/></svg>Remote support</a>
+              <a href="#top" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>Reports</a>
+            </aside>
+            <div class="main">
+              <h4>Overview</h4>
+              <div class="hint">All branches · Last 7 days</div>
+              <div class="kpis">
+                <div class="kpi"><small>Devices online</small><strong>1,248</strong><em>▲ 3.2%</em></div>
+                <div class="kpi"><small>Branches</small><strong>8</strong><em>All connected</em></div>
+                <div class="kpi"><small>Policy compliance</small><strong>98%</strong><em>▲ 1.1%</em></div>
+                <div class="kpi"><small>Open alerts</small><strong>4</strong><em style="color:#F2C27A">2 need action</em></div>
+              </div>
+              <div class="panels">
+                <div class="panel"><h5>Devices by branch</h5>
+                  <div class="rows">
+                    <div><span>Jeddah HQ</span><span>412 devices</span><span class="dot">Healthy</span></div>
+                    <div><span>Riyadh</span><span>298 devices</span><span class="dot">Healthy</span></div>
+                    <div><span>Dammam</span><span>176 devices</span><span class="dot w">2 alerts</span></div>
+                    <div><span>Makkah</span><span>134 devices</span><span class="dot">Healthy</span></div>
+                  </div>
+                </div>
+                <div class="panel"><h5>Check-ins this week</h5>
+                  <div class="bars"><i style="height:55%;animation-delay:.05s"></i><i style="height:72%;animation-delay:.1s"></i><i style="height:64%;animation-delay:.15s"></i><i style="height:88%;animation-delay:.2s"></i><i style="height:80%;animation-delay:.25s"></i><i style="height:94%;animation-delay:.3s"></i><i style="height:70%;animation-delay:.35s"></i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="bar"></div>
 
   <section id="products">
     <div class="wrap">
-      <h2 class="display"><span class="en">One company, a full product family</span><span class="ar">شركة واحدة، ومنتجات متكاملة</span></h2>
-      <p class="lead"><span class="en">CoreEra products share one platform, so your devices, operations and sales teams work from the same core.</span><span class="ar">تعمل منتجات كور إيرا على منصة واحدة، لتجمع أجهزتك وعملياتك وفريق مبيعاتك في نظام واحد.</span></p>
-      <div class="grid">
-        <article class="card">
-          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
-          <h3>CoreEra <span>Control</span></h3>
-          <!-- <p><span class="en">Mobile device management: enroll, secure and monitor company devices across branches and countries.</span><span class="ar">إدارة الأجهزة المحمولة: تسجيل أجهزة الشركة وحمايتها ومتابعتها في جميع الفروع والدول.</span></p> -->
-        </article>
-        <article class="card">
-          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
-          <h3>CoreEra <span>Core</span></h3>
-          <!-- <p><span class="en">ERP for inventory, purchasing and finance, in one place.</span><span class="ar">نظام تخطيط موارد المؤسسة للمخزون والمشتريات والمالية في مكان واحد.</span></p> -->
-        </article>
-        <article class="card">
-          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="7" width="15" height="10" rx="1"/><path d="M16 10h4l3 3v4h-7"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></div>
-          <h3>CoreEra <span>Sales</span></h3>
-          <!-- <p><span class="en">Sales and van-sales automation for field teams, orders and route stock.</span><span class="ar">أتمتة المبيعات والبيع المتنقل لفرق الميدان والطلبات ومخزون المسارات.</span></p> -->
-        </article>
-        <article class="card">
-          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l18-8v18L3 13z"/><path d="M7 13v5a2 2 0 0 0 4 0v-3"/></svg></div>
-          <h3>CoreEra <span>Reach</span></h3>
-          <!-- <p><span class="en">Marketing tools to reach and keep your customers.</span><span class="ar">أدوات تسويق للوصول إلى عملائك والمحافظة عليهم.</span></p> -->
-        </article>
-        <article class="card">
-          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-          <h3>CoreEra <span>Assist</span></h3>
-          <!-- <p><span class="en">Remote support to help your users quickly, wherever they are.</span><span class="ar">دعم عن بُعد لمساعدة المستخدمين بسرعة أينما كانوا.</span></p> -->
-        </article>
-        <article class="card">
-          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
-          <h3>CoreEra <span>ONE</span></h3>
-          <!-- <p><span class="en">The full platform: every CoreEra product under one login.</span><span class="ar">المنصة الكاملة: جميع منتجات كور إيرا بحساب واحد.</span></p> -->
-        </article>
+      <p class="eyebrow rv"><span class="en">Products</span><span class="ar">المنتجات</span></p>
+      <h2 class="display rv"><span class="en">One company, a full product family</span><span class="ar">شركة واحدة، ومنتجات متكاملة</span></h2>
+      <p class="lead rv"><span class="en">Every CoreEra product shares one platform, so your teams work from the same core.</span><span class="ar">تعمل جميع منتجات كور إيرا على منصة واحدة، ليعمل فريقك من نظام واحد.</span></p>
+      <div class="products">
+        <article class="prod feat rv"><span class="soon"><span class="en">First release</span><span class="ar">الإصدار الأول</span></span><div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></div><h3>CoreEra <span>Control</span></h3></article>
+        <article class="prod rv"><div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div><h3>CoreEra <span>Core</span></h3></article>
+        <article class="prod rv"><div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="7" width="15" height="10" rx="1"/><path d="M16 10h4l3 3v4h-7"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></div><h3>CoreEra <span>Sales</span></h3></article>
+        <article class="prod rv"><div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l18-8v18L3 13z"/><path d="M7 13v5a2 2 0 0 0 4 0v-3"/></svg></div><h3>CoreEra <span>Reach</span></h3></article>
+        <article class="prod rv"><div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>CoreEra <span>Assist</span></h3></article>
+        <article class="prod rv"><div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div><h3>CoreEra <span>ONE</span></h3></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="mist">
+    <div class="wrap center">
+      <p class="eyebrow rv"><span class="en">How it works</span><span class="ar">كيف نعمل</span></p>
+      <h2 class="display rv"><span class="en">From setup to insight in three steps</span><span class="ar">من الإعداد إلى النتائج في ثلاث خطوات</span></h2>
+      <p class="lead rv"><span class="en">Start with one product and add more as you grow.</span><span class="ar">ابدأ بمنتج واحد وأضف المزيد مع نموك.</span></p>
+      <div class="steps" style="text-align:start">
+        <div class="step rv"><span class="n">01</span><h3><span class="en">Connect</span><span class="ar">اربط</span></h3><p><span class="en">Enroll your devices, branches and users in minutes.</span><span class="ar">سجّل أجهزتك وفروعك ومستخدميك خلال دقائق.</span></p></div>
+        <div class="step rv"><span class="n">02</span><h3><span class="en">Manage</span><span class="ar">أدِر</span></h3><p><span class="en">Control everything from one dashboard, in Arabic or English.</span><span class="ar">تحكّم في كل شيء من لوحة واحدة، بالعربية أو الإنجليزية.</span></p></div>
+        <div class="step rv"><span class="n">03</span><h3><span class="en">Grow</span><span class="ar">انمُ</span></h3><p><span class="en">Use clear reports to make faster decisions across the business.</span><span class="ar">استخدم تقارير واضحة لاتخاذ قرارات أسرع في كل أقسام عملك.</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow rv"><span class="en">Who it's for</span><span class="ar">لمن صُمم</span></p>
+      <h2 class="display rv"><span class="en">Made for businesses on the move</span><span class="ar">لشركات في حركة دائمة</span></h2>
+      <p class="lead rv"><span class="en">Companies with field teams, branches and devices spread across cities.</span><span class="ar">للشركات التي لديها فرق ميدانية وفروع وأجهزة في مدن متعددة.</span></p>
+      <div class="inds">
+        <div class="ind rv"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1-5h16l1 5"/><path d="M4 9v11h16V9"/><path d="M9 20v-6h6v6"/></svg></span><span class="en">Retail</span><span class="ar">التجزئة</span></div>
+        <div class="ind rv"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5z"/><path d="M3 8v8l9 5 9-5V8"/></svg></span><span class="en">FMCG &amp; distribution</span><span class="ar">السلع الاستهلاكية والتوزيع</span></div>
+        <div class="ind rv"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span><span class="en">Field sales</span><span class="ar">المبيعات الميدانية</span></div>
+        <div class="ind rv"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="7" width="15" height="10" rx="1"/><path d="M16 10h4l3 3v4h-7"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></span><span class="en">Logistics</span><span class="ar">الخدمات اللوجستية</span></div>
       </div>
     </div>
   </section>
 
   <section id="why" class="mist">
-    <div class="wrap">
-      <h2 class="display"><span class="en">Why CoreEra</span><span class="ar">لماذا كور إيرا</span></h2>
-      <p class="lead"><span class="en">Built by people who run these systems every day in Saudi businesses.</span><span class="ar">من فريق يدير هذه الأنظمة يومياً داخل الشركات السعودية.</span></p>
-      <div class="why">
-        <div>
-          <span class="num">01</span>
-          <h3><span class="en">Made for the region</span><span class="ar">مصمم للمنطقة</span></h3>
-          <p><span class="en">Arabic and English from day one, and designed around how Saudi and Gulf companies work.</span><span class="ar">العربية والإنجليزية من اليوم الأول، ومصمم حسب طريقة عمل الشركات في المملكة والخليج.</span></p>
-        </div>
-        <div>
-          <span class="num">02</span>
-          <h3><span class="en">Local hosting in mind</span><span class="ar">استضافة محلية</span></h3>
-          <p><span class="en">Planned with data residency in Saudi Arabia, so your data can stay in the Kingdom.</span><span class="ar">مخطط لاستضافة البيانات داخل المملكة، لتبقى بياناتك في السعودية.</span></p>
-        </div>
-        <div>
-          <span class="num">03</span>
-          <h3><span class="en">One platform</span><span class="ar">منصة واحدة</span></h3>
-          <p><span class="en">Devices, operations and sales connected, instead of separate tools that don't talk to each other.</span><span class="ar">الأجهزة والعمليات والمبيعات مترابطة، بدلاً من أنظمة منفصلة لا تتواصل.</span></p>
-        </div>
+    <div class="wrap why">
+      <div>
+        <p class="eyebrow rv"><span class="en">Why CoreEra</span><span class="ar">لماذا كور إيرا</span></p>
+        <h2 class="display rv"><span class="en">Built by people who run these systems every day</span><span class="ar">من فريق يدير هذه الأنظمة يومياً</span></h2>
+        <ul>
+          <li class="rv"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14M5 12h10M5 16h6"/></svg></span><div><h3><span class="en">Arabic and English from day one</span><span class="ar">العربية والإنجليزية من اليوم الأول</span></h3><p><span class="en">Full right-to-left support, not a translation added later.</span><span class="ar">دعم كامل للعربية من اليمين لليسار، وليس ترجمة لاحقة.</span></p></div></li>
+          <li class="rv"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg></span><div><h3><span class="en">Your data in the Kingdom</span><span class="ar">بياناتك داخل المملكة</span></h3><p><span class="en">Planned with local hosting in Saudi Arabia in mind.</span><span class="ar">مخطط للاستضافة المحلية داخل المملكة.</span></p></div></li>
+          <li class="rv"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span><div><h3><span class="en">Support in your time zone</span><span class="ar">دعم في توقيتك</span></h3><p><span class="en">A local team that understands how Gulf companies work.</span><span class="ar">فريق محلي يفهم طريقة عمل الشركات الخليجية.</span></p></div></li>
+        </ul>
+      </div>
+      <div class="ksa rv" aria-hidden="true">
+        <div class="grid-bg"></div>
+        <h3><span class="en">Every branch, one view</span><span class="ar">كل الفروع في شاشة واحدة</span></h3>
+        <p><span class="en">See devices and teams across cities in real time.</span><span class="ar">تابع الأجهزة والفرق في جميع المدن لحظياً.</span></p>
+        <i class="ring" style="left:28%;top:62%"></i><span class="lbl" style="left:calc(28% + 18px);top:calc(62% - 4px)">Jeddah</span>
+        <i class="ring" style="left:58%;top:48%;animation-delay:.6s"></i><span class="lbl" style="left:calc(58% - 50px);top:calc(48% - 4px)">Riyadh</span>
+        <i class="ring" style="left:80%;top:40%;animation-delay:1.2s"></i><span class="lbl" style="left:calc(80% - 30px);top:calc(40% + 20px)">Dammam</span>
+        <i class="ring" style="left:33%;top:76%;animation-delay:1.8s"></i><span class="lbl" style="left:calc(33% + 18px);top:calc(76% - 4px)">Makkah</span>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="contact">
-    <div class="wrap">
-      <h2 class="display"><span class="en">Let's talk</span><span class="ar">لنتحدث</span></h2>
-      <p class="lead"><span class="en">Interested in early access or a demo? Send us a message and we'll get back to you.</span><span class="ar">مهتم بالتجربة المبكرة أو عرض توضيحي؟ راسلنا وسنعود إليك.</span></p>
-      <div class="cta">
-        <a class="btn primary" href="mailto:info@coreeratech.com"><span class="en">Email us</span><span class="ar">راسلنا</span></a>
+  <section id="contact" class="final">
+    <div class="grid-bg"></div>
+    <div class="wrap center">
+      <p class="eyebrow rv" style="color:#9CC2FF"><span class="en">Early access</span><span class="ar">التجربة المبكرة</span></p>
+      <h2 class="display rv"><span class="en">Be among the first to try CoreEra</span><span class="ar">كن من أوائل من يجرّب كور إيرا</span></h2>
+      <p class="lead rv"><span class="en">Tell us about your business and we'll reach out when early access opens.</span><span class="ar">أخبرنا عن نشاطك وسنتواصل معك عند فتح التجربة المبكرة.</span></p>
+      <div class="cta rv">
+        <a class="btn primary" href="mailto:info@coreeratech.com?subject=CoreEra%20early%20access"><span class="en">Request early access</span><span class="ar">اطلب التجربة المبكرة</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a class="btn ghost" href="https://www.linkedin.com/company/coreeratech" target="_blank" rel="noopener">LinkedIn</a>
       </div>
-      <span class="mail"><a href="mailto:info@coreeratech.com">info@coreeratech.com</a> · <a href="mailto:support@coreeratech.com">support@coreeratech.com</a></span>
+      <span class="mail rv"><a href="mailto:info@coreeratech.com">info@coreeratech.com</a> · <a href="mailto:support@coreeratech.com">support@coreeratech.com</a></span>
     </div>
   </section>
 </main>
@@ -205,17 +339,26 @@ footer a{color:var(--soft)}
 <footer>
   <div class="wrap">
     <span>© 2026 CoreEra · <span class="en">Jeddah, Saudi Arabia</span><span class="ar">جدة، المملكة العربية السعودية</span></span>
-    <span><a href="https://x.com/coreeratech" target="_blank" rel="noopener">X</a> · <a href="https://www.linkedin.com/company/coreeratech" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://www.instagram.com/coreeratech" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.youtube.com/@coreeratech" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.tiktok.com/@coreeratech" target="_blank" rel="noopener">TikTok</a></span>
+    <span class="socials"><a href="https://x.com/coreeratech" target="_blank" rel="noopener">X</a><a href="https://www.linkedin.com/company/coreeratech" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/coreeratech" target="_blank" rel="noopener">Instagram</a><a href="https://www.youtube.com/@coreeratech" target="_blank" rel="noopener">YouTube</a><a href="https://www.tiktok.com/@coreeratech" target="_blank" rel="noopener">TikTok</a></span>
   </div>
 </footer>
 
 <script>
 (function(){
-  var h=document.documentElement;
+  var h=document.documentElement;h.classList.add('js');
   function set(l){h.lang=l;h.dir=l==='ar'?'rtl':'ltr';try{localStorage.setItem('lang',l)}catch(e){}}
   var saved=null;try{saved=localStorage.getItem('lang')}catch(e){}
   if(saved==='ar'||saved==='en'){set(saved)}else if((navigator.language||'').slice(0,2)==='ar'){set('ar')}
   document.getElementById('lang').addEventListener('click',function(){set(h.lang==='ar'?'en':'ar')});
+  var hdr=document.getElementById('hdr');
+  function onScroll(){hdr.classList.toggle('scrolled',window.scrollY>20)}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e,i){if(e.isIntersecting){var el=e.target;setTimeout(function(){el.classList.add('in')},(i%6)*70);io.unobserve(el)}})},{threshold:.12});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('in')})}
+  setTimeout(function(){var m=document.getElementById('mock');if(m)m.classList.add('flat')},500);
 })();
 </script>
 </body>
